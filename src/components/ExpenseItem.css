@@ -10,7 +10,8 @@
 }
 
 .expense-item>div {
-    color:tomato;
+    color:lightblue;
+    font-size: 1.25rem;
 }
 
 .expense-item__description {
