@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {                                  //getting data props from parent
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -48,8 +48,9 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
-    console.log(expenseData);
-    setEnteredTitle('');
+
+    props.onSaveExpenseData(expenseData);              //I execute the function from props which i passed down
+    setEnteredTitle('');                    //but this time we execute ()
     setEnteredAmount('');
     setEnteredDate('');
   };
